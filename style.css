@@ -6,6 +6,7 @@
 
 :root {
     --black: #272946;
+    --blackOp: rgba(39, 41, 70, 0.8);
     --mid: #eda031;
     --white: #e7ffee;
     --mainFont: "Oswald", sans-serif;
@@ -27,6 +28,55 @@ nav {
     border-bottom: 0.2rem solid var(--black);
 }
 
+.modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: var(--mid);
+    color: var(--black);
+    z-index: 500;
+
+}
+
+.modal-flex {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 4em;
+    border: 0.2rem solid var(--black);
+}
+
+.modal-flex h1 {
+    font-family: var(--mainFont);
+}
+
+.github {
+    padding: 2em 0 1em 0;
+}
+
+.github a {
+    text-decoration: underline;
+    color: var(--black);
+}
+
+.exit {
+    background-color: var(--black);
+    color: var(--mid);
+    padding: 0.5em 0;
+    user-select: none;
+    cursor: pointer;
+}
+
+.cover {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--black);
+    z-index: 400;
+    opacity: 0.5;
+}
+
 .logo {
     font-family: var(--mainFont);
     font-size: 1rem;
@@ -42,14 +92,15 @@ nav {
     list-style-type: none;
 }
 
-.extra ul li a {
+.extra ul li {
     color: var(--black);
     padding: 1em;
-    text-decoration: none;
+    user-select: none;
+    cursor: pointer;
     transition: 0.1s all ease-in;
 }
 
-.extra ul li a:hover {
+.extra ul li:hover {
     background-color: var(--black);
     color: var(--mid);
 }
@@ -94,24 +145,28 @@ nav {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
-    background-color: pink;
-    background-image: url("assets/images/christina-villas.jpg");
-    background-size: cover;
     border: 0.2rem solid var(--black);
     transition: 0.1s all ease-in;
     cursor: pointer;
+    background-size: cover;
+    background-position: center;
+}
+
+.plan-batangas {
+    background-image: url("assets/images/batangas.jpg");
+}
+
+.plan-rizal {
+    background-image: url("assets/images/christina-villas.jpg");
+}
+
+.plan-ncr {
+    background-image: url("assets/images/marikina.jpg");
 }
 
 .plan:hover {
     transform: translateY(-0.5rem);
     box-shadow: 0 0.5rem 0 var(--mid);
-}
-
-.fill {
-    display: block;
-    height: 100%;
-    width: 100%;
-    text-decoration: none;
 }
 
 .batangas {
@@ -158,6 +213,20 @@ nav {
     color: var(--black);
 }
 
+.going-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-align: center;
+    padding: 0 10%;
+}
+
+.going-section p {
+    padding: 1em;
+    margin: 0.5em;
+    background-color: var(--black);
+    color: var(--mid);
+}
+
 .faq-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -175,6 +244,7 @@ nav {
 .faq h4 {
     font-family: var(--mainFont);
     font-size: 1.5rem;
+    text-align: center;
 }   
 
 footer {
@@ -185,6 +255,10 @@ footer {
     padding: 1em 10%;
 }
 
+.hide {
+    display: none;
+}
+
 .welcome {
     display: flex;
     flex-direction: column;
@@ -192,9 +266,137 @@ footer {
     justify-content: center;
     width: 100%;
     height: 30em;
+    color: var(--white);
+    padding-top: 3em;
+    text-align: center;
+}
+
+.welcome-batangas {
+    background-image: linear-gradient(var(--blackOp), var(--blackOp)), url("assets/images/batangas.jpg");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.welcome-rizal {
+    background-image: linear-gradient(var(--blackOp), var(--blackOp)), url("assets/images/christina-villas.jpg");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+}
+
+.welcome-ncr {
+    background-image: linear-gradient(var(--blackOp), var(--blackOp)), url("assets/images/marikina.jpg");
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
 }
 
 .welcome h2 {
     font-family: var(--mainFont);
     font-size: 3rem;
+}
+
+.welcome a {
+    text-decoration: none;
+    background-color: var(--mid);
+    color: var(--black);
+    padding: 1em;
+    margin-top: 2em;
+    transition: 0.1s all ease-in;
+}
+
+.welcome a:hover {
+    color: var(--mid);
+    background-color: var(--black);
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2em 20% 5em 20%;
+}
+
+.about-detail {
+    max-width: 50%;
+    padding: 0 0 0 2em;
+}
+
+.rates,
+.rules,
+.notes-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding: 2em 20%;
+}
+
+.rates h2,
+.rules h2,
+.notes-section h2 {
+    text-align: center;
+    font-family: var(--mainFont);
+    font-size: 2rem;
+}
+
+table {
+    width: 100%;
+    border: 0.2em solid var(--black);
+    border-collapse: collapse; 
+}
+
+td {
+    border: 0.2em solid var(--black);
+    border-collapse: collapse; 
+    padding: 1em;
+    text-align: center;
+}
+
+.entrance h3,
+.cottages h3 {
+    padding-top: 1em;
+    font-family: var(--mainFont);
+    font-size: 1.5rem;
+}
+.entrance table h3,
+.cottages table h3 {
+    padding: 0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.rules ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    padding-top: 2em;
+}
+
+.rules ul li {
+    list-style-type: none;
+    background-color: var(--black);
+    padding: 1em;
+    color: var(--mid);
+    text-align: center;
+}
+
+.notes-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    color: var(--black);
+    padding: 2em 0;
+}
+
+.note {
+    background-color: var(--mid);
+    border: 0.2rem solid var(--black);
+    padding: 1em;
+}
+
+.note h4 {
+    font-family: var(--mainFont);
+    font-size: 1.5rem;
 }

@@ -6,33 +6,49 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Quicksand&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../../media.css">
     <title>Coloring - Plan B</title>
 </head>
 <body>
+    <div class="modal hide">
+        <div class="modal-flex">
+            <h1>CONTACT ME:</h1>
+            <p>You can reach out to me via Messenger. If you don't know who am I don't contact me. Thanks!</p>
+            <div class="github">
+                <a href="https://github.com/Pr0s4ic/Coloring" target="_blank">Deployed Using Github Pages</a>
+            </div>
+            <div class="exit">
+                <p>Close</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cover hide"></div>
+
     <nav>
         <div class="logo">
-            <h1><a href="index.html">PROJECT: COLORING</a></h1>
+            <h1><a href="../../index.html">PROJECT: COLORING</a></h1>
         </div>
         <div class="extra">
             <ul>
-                <li><a href="#">Contact</a></li>
+                <li class="contact-btn">Contact</li>
             </ul>
         </div>
     </nav>
     
     <div class="container">
-        <div class="welcome">
+        <div class="welcome welcome-rizal">
             <h1>PLAN FOR RIZAL:</h1>
             <h2>Cristina Villas Mountain Resort</h2>
-            <p>Default go-to resort for RICS community. If you don't know this, you're not from RICS.</p>
+            <p>Default go-to resort for RICS community.<br>If you don't know this, you're not from RICS.</p>
             <a href="https://cristinavillasresort.com/" target="_blank">Website</a>
         </div>
 
         <div class="rates">
-            <h2>Rates:</h2>
+            <h2>R A T E S</h2>
             <div class="entrance">
-                <h2>Entrance:</h2>
+                <h3>Entrance:</h3>
                 <table>
                     <tr>
                         <td><h3>Day Time</h3></td>
@@ -46,6 +62,7 @@
             </div>
 
             <div class="cottages">
+                <h3>Cottages:</h3>
                 <table>
                     <tr>
                         <td><h3>Type</h3></td>
@@ -88,7 +105,7 @@
         </div>
 
         <div class="rules">
-            <h2>Relevant Rules:</h2>
+            <h2>R U L E S</h2>
             <ul>
                 <li>Strictly swimming attire</li>
                 <li>Shower with soap before entering pool</li>
@@ -101,29 +118,22 @@
         </div>
 
         <div class="notes-section">
-            <div class="note">
-                <h4>Day and Night Times:</h4>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, fugiat.</p>
-            </div>
-            <div class="note">
-                <h4>Cottage:</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, laborum.</p>
-            </div>
-            <div class="note">
-                <h4>Food:</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident, consectetur!</p>
-            </div>
-            <div class="note">
-                <h4>Other Notes:</h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis, odit?</p>
-            </div>
+            <h2>N O T E S</h2>
+            <div class="notes-container"></div>
         </div>
 
-        
+        <div class="about">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3861.006254851422!2d121.16364841517522!3d14.598719381035801!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b8b58aaad49b%3A0x56e8b7e5bfb26a5d!2sCristina%20Villas%20Mountain%20Resort!5e0!3m2!1sen!2sph!4v1654535615348!5m2!1sen!2sph" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <div class="about-detail">
+                <p>Cristina Villas Mountain Resort isn't new to the table making it a comfort choice rather than a risk like other plans. However it's Plan B for the same reason - it isn't new. If ever we've come to around 20 people I think this would be the best option, transportation isn't wallet-breaking so we can have better foods for the trip.</p>
+            </div>
+        </div>
     </div>
 
     <footer>
-        <p>Copyleft 2022</p>
+        <p>Deployed Using Github. Copyleft 2022.</p>
     </footer>
+
+    <script src="../js/app-b.js"></script>
 </body>
 </html>

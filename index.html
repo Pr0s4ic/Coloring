@@ -7,16 +7,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Quicksand&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="media.css">
     <title>Coloring</title>
 </head>
 <body>
+    <div class="modal hide">
+        <div class="modal-flex">
+            <h1>CONTACT ME:</h1>
+            <p>You can reach out to me via Messenger. If you don't know who am I don't contact me. Thanks!</p>
+            <div class="github">
+                <a href="https://github.com/Pr0s4ic/Coloring" target="_blank">Deployed Using Github Pages</a>
+            </div>
+            <div class="exit">
+                <p>Close</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cover hide"></div>
+    
     <nav>
         <div class="logo">
             <h1><a href="index.html">PROJECT: COLORING</a></h1>
         </div>
         <div class="extra">
             <ul>
-                <li><a href="#">Contact</a></li>
+                <li class="contact-btn">Contact</li>
             </ul>
         </div>
     </nav>
@@ -25,58 +41,42 @@
         <div class="intro">
             <h1>P   L   A   N   S</h1>
             <div class="plan-section">
-                <div class="plan batangas">
-                    <a href="plan-a.html" class="fill plan-batangas">
+                <div class="plan batangas plan-batangas">
                         <div class="title">
                             <h3>Plan A:</h3>
-                            <h2>IPSUM</h2>
+                            <h2>BATANGAS</h2>
                         </div>
-                    </a>
                 </div>
-                <div class="plan">
-                    <a href="plan-b.html" class="fill plan-rizal">
+                <div class="plan rizal plan-rizal">
                         <div class="title">
                             <h3>Plan B:</h3>
-                            <h2>IPSUM</h2>  
+                            <h2>RIZAL</h2>  
                         </div>
-                    </a>
                 </div>
-                <div class="plan">
-                    <a href="plan-c.html" class="fill plan-ncr">
+                <div class="plan ncr plan-ncr">
                         <div class="title">
                             <h3>Plan C:</h3>
-                            <h2>IPSUM</h2>
+                            <h2>NCR</h2>
                         </div>
-                    </a>
                 </div>
             </div>
         </div>
 
         <div class="article">
+            <h1>G O I N G</h1>
+            <div class="going-section"></div>
+        </div>
+
+        <div class="article">
             <h1>F   A   Q</h1>
-            <div class="faq-section">
-                <div class="faq">
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, maiores?</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores repudiandae omnis minima quo quidem veritatis nostrum itaque inventore nihil praesentium?</p>
-                </div>
-                <div class="faq">
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, maiores?</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores repudiandae omnis minima quo quidem veritatis nostrum itaque inventore nihil praesentium?</p>
-                </div>
-                <div class="faq">
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, maiores?</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores repudiandae omnis minima quo quidem veritatis nostrum itaque inventore nihil praesentium?</p>
-                </div>
-                <div class="faq">
-                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, maiores?</h4>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Maiores repudiandae omnis minima quo quidem veritatis nostrum itaque inventore nihil praesentium?</p>
-                </div>
-            </div>
+            <div class="faq-section"></div>
         </div>
     </div>
 
     <footer>
-        <p>Copyleft 2022</p>
+        <p>Deployed Using Github. Copyleft 2022.</p>
     </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
