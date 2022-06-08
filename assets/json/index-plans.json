@@ -1,0 +1,14 @@
+[
+    {
+        "index": "A",
+        "title": "rizal",
+        "image": "batangas.jpg",
+        "link": "plan-rizal.html"
+    },
+    {
+        "index": "B",
+        "title": "vaughn",
+        "image": "batangas.jpg",
+        "link": "plan-vaughn.html"
+    }
+]

@@ -1,0 +1,30 @@
+[
+    {
+        "type": "I'm Not Allowed Night Swimming",
+        "time": 200,
+        "cottage": 130,
+        "transpo": 120,
+        "food": 200
+    },
+    {
+        "type": "Economy",
+        "time": 220,
+        "cottage": 120,
+        "transpo": 120,
+        "food": 150
+    },
+    {
+        "type": "Recommended",
+        "time": 220,
+        "cottage": 130,
+        "transpo": 120,
+        "food": 200
+    },
+    {
+        "type": "Rich",
+        "time": 220,
+        "cottage": 150,
+        "transpo": 120,
+        "food": 300
+    }
+]

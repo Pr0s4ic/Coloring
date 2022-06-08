@@ -15,94 +15,7 @@
 
 html {
     font-family: var(--secFont);
-}
-
-nav {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 1em 10%;
-    background-color: var(--mid);
-    border-bottom: 0.2rem solid var(--black);
-}
-
-.modal {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-    background-color: var(--mid);
-    color: var(--black);
-    z-index: 500;
-
-}
-
-.modal-flex {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    padding: 4em;
-    border: 0.2rem solid var(--black);
-}
-
-.modal-flex h1 {
-    font-family: var(--mainFont);
-}
-
-.github {
-    padding: 2em 0 1em 0;
-}
-
-.github a {
-    text-decoration: underline;
-    color: var(--black);
-}
-
-.exit {
-    background-color: var(--black);
-    color: var(--mid);
-    padding: 0.5em 0;
-    user-select: none;
-    cursor: pointer;
-}
-
-.cover {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
-    background-color: var(--black);
-    z-index: 400;
-    opacity: 0.5;
-}
-
-.logo {
-    font-family: var(--mainFont);
-    font-size: 1rem;
-}
-
-.logo a {
-    text-decoration: none;
-    color: var(--black);
-}
-
-.extra ul {
-    display: flex;
-    list-style-type: none;
-}
-
-.extra ul li {
-    color: var(--black);
-    padding: 1em;
-    user-select: none;
-    cursor: pointer;
-    transition: 0.1s all ease-in;
-}
-
-.extra ul li:hover {
-    background-color: var(--black);
-    color: var(--mid);
+    font-size: 16px;
 }
 
 .container {
@@ -112,32 +25,43 @@ nav {
     background-color: var(--white);
 }
 
-.intro {
+.nav {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    height: 100vh;
+    justify-content: space-between;
+    height: 4rem;
+    width: 100%;
+    padding: 0 10%;
+    background-color: var(--mid);
+    border-bottom: 0.2rem solid var(--black);
 }
 
-.intro h1 {
+.logo a {
     font-family: var(--mainFont);
-    font-size: 3rem;
+    font-size: 1.5rem;
+    text-decoration: none;
     color: var(--black);
-    padding-top: 3em;
+}
+
+.intro h1,
+.going-article h1,
+.faq-article h1,
+.rates h2,
+.rules h2,
+.pricing-section h2,
+.notes-section h2 {
+    font-family: var(--mainFont);
+    font-size: 2.25rem;
+    color: var(--black);
+    padding: 0.5em 0;
+    text-align: center;
 }
 
 .plan-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1em;
-    padding: 1em 10% 5em 10%;
     width: 100%;
-}
-
-.plan-section a {
-    text-decoration: none;
-    height: auto;
 }
 
 .plan {
@@ -146,35 +70,16 @@ nav {
     align-items: flex-start;
     justify-content: flex-end;
     border: 0.2rem solid var(--black);
-    transition: 0.1s all ease-in;
     cursor: pointer;
     background-size: cover;
     background-position: center;
+    height: 30vh;
+    width: 100%;
 }
 
-.plan-batangas {
-    background-image: url("assets/images/batangas.jpg");
-}
-
-.plan-rizal {
-    background-image: url("assets/images/christina-villas.jpg");
-}
-
-.plan-ncr {
-    background-image: url("assets/images/marikina.jpg");
-}
-
-.plan:hover {
-    transform: translateY(-0.5rem);
-    box-shadow: 0 0.5rem 0 var(--mid);
-}
-
-.batangas {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    height: 40em;
+.plan:hover .title {
+    background-color: var(--black);
+    color: var(--mid);
 }
 
 .title {
@@ -184,45 +89,41 @@ nav {
     background-color: var(--mid);
     color: var(--black);
     padding: 1em;
-    width: 20em;
-    height: 10em;
+    width: 50%;
     border-top: 0.2rem solid var(--black);
     border-right: 0.2rem solid var(--black);
+    transition: 0.1s all ease-in;
 }
 
 .title h2 {
     font-family: var(--mainFont);
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
-.title h3 {
-    font-family: var(--secFont);
-}   
-
-.article {
+.intro,
+.going-article,
+.faq-article,
+.rates,
+.rules,
+.pricing-section,
+.notes-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    padding: 1em 0 5em 0;
-}
-
-.article h1 {
-    font-family: var(--mainFont);
-    font-size: 3rem;
-    color: var(--black);
+    padding: 0 15% 3rem 15%;
+    width: 100%;
 }
 
 .going-section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    text-align: center;
+    gap: 0.5em;
     padding: 0 10%;
+    text-align: center;
 }
 
 .going-section p {
     padding: 1em;
-    margin: 0.5em;
     background-color: var(--black);
     color: var(--mid);
 }
@@ -231,7 +132,6 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1em;
-    padding: 1em 20%;
 }
 
 .faq {
@@ -243,7 +143,7 @@ nav {
 
 .faq h4 {
     font-family: var(--mainFont);
-    font-size: 1.5rem;
+    font-size: 1.5rem;  
     text-align: center;
 }   
 
@@ -255,27 +155,15 @@ footer {
     padding: 1em 10%;
 }
 
-.hide {
-    display: none;
-}
-
 .welcome {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 30em;
     color: var(--white);
-    padding-top: 3em;
     text-align: center;
-}
-
-.welcome-batangas {
-    background-image: linear-gradient(var(--blackOp), var(--blackOp)), url("assets/images/batangas.jpg");
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply;
+    padding: 3em 0;
 }
 
 .welcome-rizal {
@@ -285,66 +173,37 @@ footer {
     background-blend-mode: multiply;
 }
 
-.welcome-ncr {
-    background-image: linear-gradient(var(--blackOp), var(--blackOp)), url("assets/images/marikina.jpg");
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: multiply;
+.welcome h1 {
+    font-size: 1.75rem;
 }
-
+    
 .welcome h2 {
     font-family: var(--mainFont);
     font-size: 3rem;
 }
 
-.welcome a {
+.links {
+    padding: 2em;
+}
+
+.links a {
     text-decoration: none;
     background-color: var(--mid);
     color: var(--black);
-    padding: 1em;
-    margin-top: 2em;
+    padding: 1em;   
     transition: 0.1s all ease-in;
 }
 
-.welcome a:hover {
+.links a:hover {
     color: var(--mid);
     background-color: var(--black);
-}
-
-.about {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 2em 20% 5em 20%;
-}
-
-.about-detail {
-    max-width: 50%;
-    padding: 0 0 0 2em;
-}
-
-.rates,
-.rules,
-.notes-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    padding: 2em 20%;
-}
-
-.rates h2,
-.rules h2,
-.notes-section h2 {
-    text-align: center;
-    font-family: var(--mainFont);
-    font-size: 2rem;
 }
 
 table {
     width: 100%;
     border: 0.2em solid var(--black);
     border-collapse: collapse; 
+    overflow-x: scroll;
 }
 
 td {
@@ -355,13 +214,15 @@ td {
 }
 
 .entrance h3,
-.cottages h3 {
+.cottages h3,
+.pricing-container h3 {
     padding-top: 1em;
     font-family: var(--mainFont);
     font-size: 1.5rem;
 }
 .entrance table h3,
-.cottages table h3 {
+.cottages table h3,
+.pricing-section table h3 {
     padding: 0;
     font-size: 1rem;
     text-align: center;
@@ -370,16 +231,14 @@ td {
 .rules ul {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1em;
-    padding-top: 2em;
+    gap: 0.5em;
 }
 
 .rules ul li {
     list-style-type: none;
     background-color: var(--black);
-    padding: 1em;
     color: var(--mid);
-    text-align: center;
+    padding: 1em;
 }
 
 .notes-container {

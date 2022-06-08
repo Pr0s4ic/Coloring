@@ -1,32 +1,45 @@
 // DOM Initialization
-const contactBtn = document.querySelector(".contact-btn");
-const modal = document.querySelector(".modal");
-const cover = document.querySelector(".cover");
-const exitBtn = document.querySelector(".exit");
+const planSection = document.querySelector(".plan-section");
+const plan = document.getElementsByClassName("plan");
+
 const goingSection = document.querySelector(".going-section");
 const faqSection = document.querySelector(".faq-section");
-const planBatangas = document.querySelector(".plan-batangas");
-const planRizal = document.querySelector(".plan-rizal");
-const planNCR = document.querySelector(".plan-ncr");
 
+// PLANS
+fetch("assets/json/index-plans.json")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        plans = data.map(function(item) {
+            return `<div class="plan ${item.title}">
+                        <div class="title">
+                            <h3>Plan ${item.index}:</h3>
+                            <h2>${item.title.toUpperCase()}</h2>
+                        </div>
+                    </div>`});
 
-// CONTACT
-contactBtn.addEventListener("click", function() {
-    if(modal.classList.contains("hide")) {
-        modal.classList.remove("hide");
-        cover.classList.remove("hide");
-    };
-});
+        plans = plans.join("");
+        planSection.innerHTML = plans;
 
-exitBtn.addEventListener("click", function() {
-    if(!modal.classList.contains("hide")) {
-        modal.classList.add("hide");
-        cover.classList.add("hide");
-    };
-});
+        setTimeout(function() {
+            for(i = 0; i < data.length; i++) {
+                Array.from(plan).forEach(function(item) {
+                    if(item.classList[1] == data[i].title) {
+                        var link = data[i].link;
+                        item.style.backgroundImage = "url(assets/images/" + String(data[i].image) + ")";
+                        
+                        item.addEventListener("click", function() {
+                            location.href = "assets/html/" + String(link);
+                        });
+                    };
+                }); 
+            };
+        }, 250);
+    });
 
 // GOING
-fetch("assets/json/going.json")
+fetch("assets/json/index-going.json")
     .then(function(response) {
         return response.json();
     })
@@ -34,12 +47,12 @@ fetch("assets/json/going.json")
         going = data.map(function(item) {
             return `<p>${item}</p>`});
     
-    going = going.join("");
-    goingSection.innerHTML = going;
+        going = going.join("");
+        goingSection.innerHTML = going;
     });
 
 // FAQ
-fetch("assets/json/faq.json")
+fetch("assets/json/index-faq.json")
     .then(function(response) {
         return response.json();
     })
@@ -50,19 +63,6 @@ fetch("assets/json/faq.json")
                         <p>${item.detail}</p>
                     </div>` });
     
-    faq = faq.join("");
-    faqSection.innerHTML = faq;
+        faq = faq.join("");
+        faqSection.innerHTML = faq;
     });
-
-// PLAN SECTIONS
-planBatangas.addEventListener("click", function() {
-    location.href = "assets/html/plan-a.html";
-});
-
-planRizal.addEventListener("click", function() {
-    location.href = "assets/html/plan-b.html";
-});
-
-planNCR.addEventListener("click", function() {
-    location.href = "assets/html/plan-c.html";
-});
