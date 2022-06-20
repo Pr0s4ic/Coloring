@@ -5,38 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Quicksand&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="media.css">
-    <title>Coloring</title>
+    <title>Final Plans</title>
 </head>
 <body>
+    <div class="modal-notes hidden">
+        <div class="menu">
+           <h1>NOTES</h1>
+           <p class="close-button1">Close</p>
+        </div>
+
+        <div class="entry">
+            <h2>Food Budget Breakdown:</h2>
+            <table class="budget-breakdown"></table>
+        </div>
+    </div>
+
+    <div class="modal-minutes hidden">
+        <div class="menu">
+           <h1>MINUTES</h1>
+           <p class="close-button2">Close</p>
+        </div>
+
+        <div class="entry">
+            <h2>Minutes PDF:</h2>
+            <table class="minutes-pdf">
+            </table>
+        </div>
+    </div>
+
     <div class="container">
         <div class="nav">
             <div class="logo">
-                <h1><a href="index.html">PROJECT: COLORING</a></h1>
+                <h1>Coloring: Plan Report</h1>
+            </div>
+            <div class="extra">
+                <h3 class="notes-button">Notes</h3>
+                <h3 class="minutes-button">Minutes</h3>
             </div>
         </div>
 
-        <div class="intro">
-            <h1>PLANS</h1>
-            <div class="plan-section"></div>
+        <div class="attend">
+            <div class="going"></div>
+            <div class="names"><ul class="names-list"></ul></div>
         </div>
 
-        <div class="going-article">
-            <h1>GOING</h1>
-            <div class="going-section"></div>
+        <hr/>
+        
+        <div class="time"></div>
+
+        <hr/>
+
+        <div class="budget">
+            <h1>Individual Budget:</h1>
+
+            <div class="indiv-box">
+                <h1>475</h1>
+                <h2>PESOS*</h2>
+            </div>
+            <p>*This is EXCLUDING your food contribution.</p>
         </div>
 
-        <div class="faq-article">
-            <h1>FAQ</h1>
-            <div class="faq-section"></div>
-        </div>
-    </div>  
+        <hr/>
 
-    <footer>
-        <p>Deployed Using Github. Copyleft 2022.</p>
-    </footer>
+        <div class="food">
+            <h1>Total FOOD Budget:</h1>
+
+            <div class="budget-box"></div>
+            <p>*This budget is based on the survey of how much each attendee can contribute to the food. Plans on what to do with it is still in conception. If you forgot how much your contribution is, check "Notes". If you want to change how much you'll give, chat me.</p>
+        </div>
+
+
+        <div class="footer">
+            <p>Deployed Using Github. Copyleft 2022</p>
+        </div>
+
+    </div>
 
     <script src="app.js"></script>
 </body>

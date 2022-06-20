@@ -1,58 +1,63 @@
-@media  screen and (max-width: 1000px) {
-    .going-section {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .faq-section {
-        grid-template-columns: 1fr;
-    }
-
-    .rules ul {
-        grid-template-columns: 1fr;
-    }
-
-    .notes-container {
-        grid-template-columns: 1fr;
+@media screen and (max-width: 1000px) {
+    html {
+        font-size: 14px;
     }
 }
 
-@media screen and (max-width: 900px) and (orientation: portrait) {
-    .plan {
-        height: 20vh;
-    }
-
-    .title {
-        width: 100%;
-        border-right: none;
-    }
-
-    .going-section {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .intro,
-    .going-article,
-    .faq-article,
-    .rates, 
-    .rules,
-    .pricing-section,
-    .notes-section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 5% 3rem 5%;
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 700px) and (orientation: portrait) {
+@media screen and (max-width: 700px) {
     html {
         font-size: 12px;
     }
 }
 
+@media screen and (orientation: portrait) {
+    .modal-notes,
+    .modal-minutes {
+        width: 75%;
+    }
+
+    .extra h3 {
+        margin-left: 1em;
+    }
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .time {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 500px) and (orientation: portrait) {
+    html {
+        font-size: 10px;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .time {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
 @media screen and (max-width: 400px) and (orientation: portrait) {
     html {
-        font-size: 9px;
+        font-size: 8px;
+    }
+
+    .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .time {
+        flex-direction: column;
+        text-align: center;
     }
 }

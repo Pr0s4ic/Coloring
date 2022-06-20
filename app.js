@@ -1,68 +1,136 @@
-// DOM Initialization
-const planSection = document.querySelector(".plan-section");
-const plan = document.getElementsByClassName("plan");
+const budgetBreakdown = document.querySelector(".budget-breakdown");
+const minutesPDF = document.querySelector(".minutes-pdf");
+const going = document.querySelector(".going");
+const namesList = document.querySelector(".names-list");
+const time = document.querySelector(".time");
+const budgetBox = document.querySelector(".budget-box");
 
-const goingSection = document.querySelector(".going-section");
-const faqSection = document.querySelector(".faq-section");
+const modalNotes = document.querySelector(".modal-notes");
+const modalMinutes = document.querySelector(".modal-minutes");
+const notesBtn = document.querySelector(".notes-button");
+const minutesBtn = document.querySelector(".minutes-button");
+const closeBtn1 = document.querySelector(".close-button1");
+const closeBtn2 = document.querySelector(".close-button2");
 
-// PLANS
-fetch("assets/json/index-plans.json")
+// Budget Breakdown
+fetch("json/attendees.json")
     .then(function(response) {
         return response.json();
     })
     .then(function(data) {
-        plans = data.map(function(item) {
-            return `<div class="plan ${item.title}">
-                        <div class="title">
-                            <h3>Plan ${item.index}:</h3>
-                            <h2>${item.title.toUpperCase()}</h2>
-                        </div>
-                    </div>`});
+        contribute = data.map(function(item) {
+            return `<tr>
+                        <td>${item.name}</td>
+                        <td>${item.budget}</td>
+                    </tr>`
+        });
 
-        plans = plans.join("");
-        planSection.innerHTML = plans;
-
-        setTimeout(function() {
-            for(i = 0; i < data.length; i++) {
-                Array.from(plan).forEach(function(item) {
-                    if(item.classList[1] == data[i].title) {
-                        var link = data[i].link;
-                        item.style.backgroundImage = "url(assets/images/" + String(data[i].image) + ")";
-                        
-                        item.addEventListener("click", function() {
-                            location.href = "assets/html/" + String(link);
-                        });
-                    };
-                }); 
-            };
-        }, 250);
+    header = `<tr>
+                    <td><h4>Name</h4></td>
+                    <td><h4>Contribution</h4></td>
+              </tr>`;
+    contribute = contribute.join("");
+    budgetBreakdown.innerHTML = header + contribute;
     });
 
-// GOING
-fetch("assets/json/index-going.json")
+// Download Minutes
+fetch("json/link.json")
     .then(function(response) {
         return response.json();
     })
     .then(function(data) {
-        going = data.map(function(item) {
-            return `<p>${item}</p>`});
+        link = data.map(function(item) {
+            return `<tr>
+                        <td>${item.name}</td>
+                        <td><a href="${item.link}" download="${item.download}">Download</a></td>
+                    </tr>`
+        });
     
-        going = going.join("");
-        goingSection.innerHTML = going;
+    header = `<tr>
+                <td><h4>Meeting</h4></td>
+                <td><h4>Link</h4></td>
+              </tr>`;
+    link = link.join("");
+    minutesPDF.innerHTML = header + link;
     });
 
-// FAQ
-fetch("assets/json/index-faq.json")
+// Modal
+notesBtn.addEventListener("click", function() {
+    modalNotes.classList.toggle("hidden");
+});
+
+closeBtn1.addEventListener("click", function() {
+    modalNotes.classList.toggle("hidden");
+});
+
+minutesBtn.addEventListener("click", function() {
+    modalMinutes.classList.toggle("hidden");
+});
+
+closeBtn2.addEventListener("click", function() {
+    modalMinutes.classList.toggle("hidden");
+});
+
+// Going
+fetch("json/attendees.json")
     .then(function(response) {
         return response.json();
     })
     .then(function(data) {
-        faq = data.map(function(item) {
-            return `<div class="faq">
-                        <h4>${item.title}</h4>
-                        <p>${item.detail}</p>
-                    </div>` });
+        var num = 0;
+        data.map(function(item) {
+            num++;
+        });
     
-        faq = faq.join("");
-        faqSection.innerHTML = faq;
+    text = `<h1>${num}</h1>
+            <h2>PEOPLE ARE GOING</h2>`;
+    going.innerHTML = text;
+    })
+
+// Attendees
+fetch("json/attendees.json")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        attend = data.map(function(item) {
+            return `<li>${item.name}</li>`;
+        });
+    
+    attend = attend.join("");
+    namesList.innerHTML = attend;
     });
+
+// Details
+fetch("json/time.json")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        details = data.map(function(item) {
+            return `<div class="time-box">
+                        <p>${item.title}</p>
+                        <h1>${item.details}</h1>
+                    </div>`
+        });
+    
+    details = details.join("");
+    time.innerHTML = details;
+    });
+
+// Food Budget
+fetch("json/attendees.json")
+    .then(function(response) {
+        return response.json();
+    })
+    .then(function(data) {
+        var num = 0;
+        price = data.map(function(item) {
+            num += item.budget;
+        });
+    
+    price = `<h1>${num}</h1>
+             <h2>PESOS*</h2>`;
+    budgetBox.innerHTML = price;
+    
+    })
