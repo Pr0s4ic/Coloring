@@ -3,5 +3,10 @@
         "name": "Initial Plans",
         "download": "meeting-1",
         "link": "pdf/meeting-1.pdf"
+    },
+    {
+        "name": "Second Planning",
+        "download": "meeting-2",
+        "link": "pdf/meeting-2.pdf"
     }
 ]
